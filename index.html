@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masterproef: Dynamic projection mapping</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 20px; }
+        h1, h2, h3 { color: #333; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        table, th, td { border: 1px solid black; }
+        th, td { padding: 8px; text-align: left; }
+        img { max-width: 100%; height: auto; margin-top: 10px; }
+        hr { margin: 20px 0; }
+    </style>
+</head>
+<body>
+    <button id="darkModeToggle">🌙 Dark Mode</button>
+
+    <h1>Masterproef: Dynamic projection mapping</h1>
+    
+    <hr>
+    
+    <h2>Logboek</h2>
+    <table>
+        <tr>
+            <th>Datum</th>
+            <th>Beschrijving</th>
+        </tr>
+        <tr>
+            <td>20-02-2025</td>
+            <td>Begin met 3D tekenen van maquette.</td>
+        </tr>
+        <tr>
+            <td>21-02-2025</td>
+            <td>Verder gewerkt aan 3D tekenen van maquette.</td>
+        </tr>
+        <tr>
+            <td>22-02-2025</td>
+            <td>Verder gewerkt aan 3D tekenen van maquette. Begin 3D printen van maquette.</td>
+        </tr>
+        <tr>
+            <td>23-02-2025</td>
+            <td>Verder gewerkt aan 3D tekenen van maquette. Verder 3D printen van maquette.</td>
+        </tr>
+        <tr>
+            <td>24-02-2025</td>
+            <td>3D tekenen van maquette afgerond. Verder 3D printen van maquette. Begin schrijven van Inventor plugin voor het aan- en uitzetten van tolerantie maten.</td>
+        </tr>
+        <tr>
+            <td>25-02-2025</td>
+            <td>Verder 3D printen van maquette. Afgerond schrijven van Inventor plugin.</td>
+        </tr>
+    </table>
+    
+    <hr>
+    
+    <h3>3D model van maquette (Foto = v2, 3D Model = v1)</h3>
+    <div style="display: flex; align-items: center; gap: 10px;">
+        <img src="./House_Assembly_V1.png" alt="Model van maquette v1" style="height: 400px; width: auto;">
+        <iframe src="./3D_viewer.html" width="960" height="540"></iframe>
+    </div>
+    
+    <hr>
+    
+    <h3>Detectie van 3D printed ArUco marker</h3>
+    <img src="./3D_Printed_Marker_Detection.gif" alt="Detectie van 3D printed marker" style="height: 400px; width: auto;">
+    
+    <hr>
+    
+    <h3>Inventor tolerantie plugin</h3>
+    <img src="./Inventor_Tolerantie_Plugin.gif" alt="Inventor tolerantie plugin" style="height: 400px; width: auto;">
+    
+    <hr>
+
+    <!-- dark mode stuff -->
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: white;
+            color: black;
+        }
+        h1, h2, h3 { color: #333; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        table, th, td { border: 1px solid black; }
+        th, td { padding: 8px; text-align: left; }
+        img { max-width: 100%; height: auto; margin-top: 10px; }
+        hr { margin: 20px 0; }
+    
+        /* Dark mode styles */
+        .dark-mode {
+            background-color: #121212;
+            color: white;
+        }
+        .dark-mode h1, 
+        .dark-mode h2, 
+        .dark-mode h3 {
+            color: white;
+        }
+        .dark-mode table, 
+        .dark-mode th, 
+        .dark-mode td {
+            border: 1px solid white;
+        }
+        #darkModeToggle {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            padding: 8px 12px;
+            cursor: pointer;
+        }
+    </style>
+
+    <script>
+        const toggleButton = document.getElementById("darkModeToggle");
+
+        // Check als de gebruiker eerder Dark Mode heeft gekozen
+        if (localStorage.getItem("dark-mode") === "enabled") {
+            document.body.classList.add("dark-mode");
+        }
+
+        toggleButton.addEventListener("click", () => {
+            document.body.classList.toggle("dark-mode");
+
+            // Sla voorkeur op in Local Storage
+            if (document.body.classList.contains("dark-mode")) {
+                localStorage.setItem("dark-mode", "enabled");
+            } else {
+                localStorage.setItem("dark-mode", "disabled");
+            }
+        });
+    </script>
+    
+</body>
+</html>
