@@ -51,14 +51,25 @@
             <td>25-02-2025</td>
             <td>Verder 3D printen van maquette. Afgerond schrijven van Inventor plugin.</td>
         </tr>
+        <tr>
+            <td>26-02-2025</td>
+            <td>Verder 3D printen van maquette. Inventor plugin gebruikt om 2de versie van model te maken.</td>
+        </tr>
     </table>
     
     <hr>
     
-    <h3>3D model van maquette (Foto = v2, 3D Model = v1)</h3>
+    <div style="display: flex;">
+        <h3>3D model van maquette (</h3>
+        <select id="modelSelect">
+            <option>v2</option>
+            <option>v1</option>
+        </select>
+        <h3>)</h3>
+    </div>
     <div style="display: flex; align-items: center; gap: 10px;">
-        <img src="./House_Assembly_V1.png" alt="Model van maquette v1" style="height: 400px; width: auto;">
-        <iframe src="./3D_viewer.html" width="960" height="540"></iframe>
+        <img id="modelImage" src="./House_Assembly_v2.png" alt="Model van maquette v1" style="height: 400px; width: auto;">
+        <iframe id="modelViewer" src="./3D_viewer.html" width="960" height="540" style="background-color: #8b8b8b;"></iframe>
     </div>
     
     <hr>
@@ -82,6 +93,23 @@
     
     <hr>
 
+    <!-- versie selectie maquette -->
+
+    <script>
+        document.getElementById('modelSelect').addEventListener('change', function () {
+            const selectedVersion = this.value;
+            const imageElement = document.getElementById('modelImage');
+            const iframeElement = document.getElementById('modelViewer');
+            
+            // Pas de src aan op basis van de geselecteerde versie
+            imageElement.src = `./House_Assembly_${selectedVersion}.png`;
+            imageElement.alt = `Model van maquette ${selectedVersion}`;
+
+            // Stuur de geselecteerde versie naar de iframe via postMessage
+            iframeElement.contentWindow.postMessage({ version: selectedVersion }, "*");
+        });
+    </script>
+
     <!-- dark mode stuff -->
 
     <style>
@@ -98,10 +126,22 @@
         th, td { padding: 8px; text-align: left; }
         img { max-width: 100%; height: auto; margin-top: 10px; }
         hr { margin: 20px 0; }
+
+        select {
+            padding: 8px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: white; /* Standaard achtergrondkleur */
+            color: black; /* Standaard tekstkleur */
+            height: 35px;
+            margin-top: 17px;
+            font-weight: bold;
+        }
     
         /* Dark mode styles */
         .dark-mode {
-            background-color: #121212;
+            background-color: #333;
             color: white;
         }
         .dark-mode h1, 
@@ -113,6 +153,11 @@
         .dark-mode th, 
         .dark-mode td {
             border: 1px solid white;
+        }
+        .dark-mode select {
+            background-color: #333; /* Donkere achtergrondkleur */
+            color: white; /* Witte tekstkleur */
+            border: 1px solid #555; /* Donkere randkleur */
         }
         #darkModeToggle {
             position: fixed;
