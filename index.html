@@ -55,6 +55,10 @@
             <td>26-02-2025</td>
             <td>Verder 3D printen van maquette. Inventor plugin gebruikt om 2de versie van model te maken.</td>
         </tr>
+        <tr>
+            <td>27-02-2025</td>
+            <td>Verder 3D printen van maquette. Versie 3 van model gemaakt, markers op elke hoek toegevoegd en tiles dicht gemaakt met vloertjes. De origin point van het model naar het midden gezet en op een hoogt van de ArUco markers zodat dit later geen problemen zal geven bij het tracken en setten van de positie. </td>
+        </tr>
     </table>
     
     <hr>
@@ -62,13 +66,14 @@
     <div style="display: flex;">
         <h3>3D model van maquette (</h3>
         <select id="modelSelect">
+            <option>v3</option>
             <option>v2</option>
             <option>v1</option>
         </select>
         <h3>)</h3>
     </div>
     <div style="display: flex; align-items: center; gap: 10px;">
-        <img id="modelImage" src="./House_Assembly_v2.png" alt="Model van maquette v1" style="height: 400px; width: auto;">
+        <img id="modelImage" src="./House_Assembly_v3.png" alt="Model van maquette v1" style="height: 400px; width: auto;">
         <iframe id="modelViewer" src="./3D_viewer.html" width="960" height="540" style="background-color: #8b8b8b;"></iframe>
     </div>
     
