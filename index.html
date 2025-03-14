@@ -69,19 +69,39 @@
         </tr>
         <tr>
             <td>02-03-2025</td>
-            <td>Verder schrijven van de tracking code.</td>
+            <td>Verder schrijven van de tracking code. Zoeken naar juiste conversie tussen coördinaat systemen.</td>
         </tr>
         <tr>
             <td>03-03-2025</td>
-            <td>Verder schrijven van de tracking code.</td>
+            <td>Verder schrijven van de tracking code (convertie).</td>
         </tr>
         <tr>
             <td>04-03-2025</td>
-            <td>Verder schrijven van de tracking code.</td>
+            <td>Verder schrijven van de tracking code (convertie).</td>
         </tr>
         <tr>
             <td>05-03-2025</td>
-            <td>Verder schrijven van de tracking code.</td>
+            <td>Verder schrijven van de tracking code (convertie).</td>
+        </tr>
+        <tr>
+            <td>10-03-2025</td>
+            <td>Verder schrijven van de tracking code. Juiste convertie gevonden en goede initialisation functie geschreven.</td>
+        </tr>
+        <tr>
+            <td>11-03-2025</td>
+            <td>Verder schrijven van de tracking code. Zoeken naar hoe ik de camera juist kan positioneren. Open3D vertoond raar gedrag.</td>
+        </tr>
+        <tr>
+            <td>12-03-2025</td>
+            <td>Verder schrijven van de tracking code (camera positionering).</td>
+        </tr>
+        <tr>
+            <td>13-03-2025</td>
+            <td>Verder schrijven van de tracking code (camera positionering).</td>
+        </tr>
+        <tr>
+            <td>14-03-2025</td>
+            <td>Camera positionering gedrag besproken met promotor, geconcludeer dat Open3D niet werkt als verwacht. Begonnen aan alternatieve oplossing, eigen OpenGL renderer schrijven.</td>
         </tr>
     </table>
     
@@ -118,6 +138,14 @@
     <div style="display: flex; gap: 10px;">
         <img src="./Inventor_Tolerantie_Plugin.gif" alt="Inventor tolerantie plugin" style="height: 400px; width: auto;">
         <p>Dit is een plugin geschreven in python voor Autodesk Inventor 2022. Het dient om meerdere maten tegelijk een tolerantie toe te kennen. Zo kan er snel en makkelijk gewisseld worden tussen de maten die gebruikt worden om het model te 3D printen en de versie van het model dat gebruikt word om de assembly van de maquette te maken. Bij printen willen we typisch een kleine tolerantie als onderdelen in elkaar gaan klikken of schuiven, voor het assembly willen we dat de modellen perfect op elkaar aansluiten.</p>
+    </div>
+    
+    <hr>
+
+    <h3>OpenGL Renderer</h3>
+    <div style="display: flex; gap: 10px;">
+        <img src="./OpenGL_Renderer.gif" alt="OpenGL renderer" style="height: 400px; width: auto;">
+        <p>Een simpele OpenGL renderer die een kubus met textures toont en rond draait. Gaat mogelijk gebruikt worden voor het visualiseren van de projection mapping en het renderen van een correct beeld dat de projector gaat projecteren. Dit is enkel een hardcoded kubus met textures ingeladen. Functionaliteit zoals het inladen van het maquette model en camera instellingen zijn in deze versie nog niet aanwezig.</p>
     </div>
     
     <hr>
