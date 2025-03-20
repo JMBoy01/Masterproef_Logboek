@@ -103,6 +103,30 @@
             <td>14-03-2025</td>
             <td>Camera positionering gedrag besproken met promotor, geconcludeer dat Open3D niet werkt als verwacht. Begonnen aan alternatieve oplossing, eigen OpenGL renderer schrijven.</td>
         </tr>
+        <tr>
+            <td>15-03-2025</td>
+            <td>Verder gewerkt aan OpenGL renderer. Basics gemaakt en getest met hardcoded cube + textures.</td>
+        </tr>
+        <tr>
+            <td>16-03-2025</td>
+            <td>Verder gewerkt aan OpenGL renderer. Mogelijk gemaakt om .obj file in te laden met bijhorende textures -> nog probleem met texture mapping.</td>
+        </tr>
+        <tr>
+            <td>17-03-2025</td>
+            <td>Verder gewerkt aan OpenGL renderer. Texture mapping gefixed.</td>
+        </tr>
+        <tr>
+            <td>18-03-2025</td>
+            <td>Gezocht en bepaalt naar welke soort communicatie ik kan gebruiken tussen mijn tracking en visualisatie code. Shared memory, sockets, soort queue systeem zijn verschillende opties, geprobeerd sockets te implementeren -> werkt nog niet.</td>
+        </tr>
+        <tr>
+            <td>19-03-2025</td>
+            <td>Sockets probleem opgelost, socket in eigen thread runnen en data kopiëren in msg object, data dan later verwerken in real time.</td>
+        </tr>
+        <tr>
+            <td>20-03-2025</td>
+            <td>Alles samen gezet, meerdere kleine foutjes opgelost bij tracking code -> pose werd rond fout origin point berekent, gebruik van foute intrinsieke matrix, ... Oriëntatie en origin point van 3D model veranderd, stemt nu wel overeen met de OpenGL assenstelsel standaard. Tracking code werkt! Textures gemaakt.</td>
+        </tr>
     </table>
     
     <hr>
@@ -148,6 +172,14 @@
         <p>Een simpele OpenGL renderer die een kubus met textures toont en rond draait. Gaat mogelijk gebruikt worden voor het visualiseren van de projection mapping en het renderen van een correct beeld dat de projector gaat projecteren. Dit is enkel een hardcoded kubus met textures ingeladen. Functionaliteit zoals het inladen van het maquette model en camera instellingen zijn in deze versie nog niet aanwezig.</p>
     </div>
     
+    <hr>
+
+    <h3>OpenGL Renderer</h3>
+    <div style="display: flex; gap: 10px;">
+        <img src="./Real_Time_Tracking.gif" alt="Real time tracking" style="height: 400px; width: auto;">
+        <p>Real-time tracking van de maquette met OpenCV python code, de visuaisatie is de OpenGL renderer.</p>
+    </div>
+
     <hr>
 
     <!-- versie selectie maquette -->
