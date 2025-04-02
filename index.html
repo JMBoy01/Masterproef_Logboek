@@ -127,6 +127,46 @@
             <td>20-03-2025</td>
             <td>Alles samen gezet, meerdere kleine foutjes opgelost bij tracking code -> pose werd rond fout origin point berekent, gebruik van foute intrinsieke matrix, ... Oriëntatie en origin point van 3D model veranderd, stemt nu wel overeen met de OpenGL assenstelsel standaard. Tracking code werkt! Textures gemaakt.</td>
         </tr>
+        <tr>
+            <td>21-03-2025</td>
+            <td>Kalibratie van camera schrijven</td>
+        </tr>
+        <tr>
+            <td>24-03-2025</td>
+            <td>Kalibratie van camera projector schrijven</td>
+        </tr>
+        <tr>
+            <td>25-03-2025</td>
+            <td>Kalibratie van camera projector schrijven</td>
+        </tr>
+        <tr>
+            <td>26-03-2025</td>
+            <td>Kalibratie van camera projector schrijven, probleem met kalibratie</td>
+        </tr>
+        <tr>
+            <td>27-03-2025</td>
+            <td>Kalibratie van camera projector schrijven, probleem met kalibratie</td>
+        </tr>
+        <tr>
+            <td>28-03-2025</td>
+            <td>Kalibratie van camera projector schrijven, probleem gevonden. Het inladen van de intrinsieke camera parameters werkte incorrect door eerder gemaakte veranderingen aan de file structuur.</td>
+        </tr>
+        <tr>
+            <td>30-03-2025</td>
+            <td>Testen met volledige setup, probleem aan de visualisatie kant, de projector projecteerd niet op de juiste schaal/met een offset. Vermoed dat er ergens een offset op zit die ik momenteel nog niet vind.</td>
+        </tr>
+        <tr>
+            <td>31-03-2025</td>
+            <td>Nog steeds probleem bij runnen van de volledige setup. Meerdere dingen geprobeerd en wat mogelijke foutjes uit de code gehaald.</td>
+        </tr>
+        <tr>
+            <td>01-04-2025</td>
+            <td>Nog steeds probleem bij runnen van de volledige setup. Vragen gesteld en meerdere dingen geprobeerd, conclusie dat het waarschijnlijk aan de intrinsieke parameters ligt aan de OpenGL kant.</td>
+        </tr>
+        <tr>
+            <td>02-04-2025</td>
+            <td>Probleem gevonden, de intrinsieke werden fout toegepast. Nu word frustum opgesteld op correcte manier. Ook werd projection matrix nooit geupdate omdat data te snel overschreven werd door extrinsieke data.</td>
+        </tr>
     </table>
     
     <hr>
@@ -174,7 +214,7 @@
     
     <hr>
 
-    <h3>OpenGL Renderer</h3>
+    <h3>Real-time Tracking</h3>
     <div style="display: flex; gap: 10px;">
         <img src="./Real_Time_Tracking.gif" alt="Real time tracking" style="height: 400px; width: auto;">
         <p>Real-time tracking van de maquette met OpenCV python code, de visuaisatie is de OpenGL renderer.</p>
